@@ -1,0 +1,396 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background: #000000;
+    overscroll-behavior: contain;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    line-height: 1.4;
+    color: #000000;
+    background-color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+header {
+    background: #000000;
+    color: #ffffff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #000000;
+}
+
+.nav-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 80px 20px 40px;
+    background: #ffffff;
+    color: #000000;
+    border-bottom: 1px solid #000000;
+}
+
+.hero-content {
+    max-width: 800px;
+    text-align: center;
+}
+
+.ascii-art {
+    margin-bottom: 2rem;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    line-height: 1.2;
+    white-space: pre;
+    overflow-x: auto;
+}
+
+.ascii-art pre {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #000000;
+    font-family: 'Courier New', monospace;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #000000;
+    line-height: 1.4;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 0;
+    text-decoration: none;
+    font-weight: normal;
+    transition: none;
+    border: 1px solid #000000;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: 'Courier New', monospace;
+    background: #ffffff;
+    color: #000000;
+}
+
+.btn-primary {
+    background: #000000;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+.btn-primary:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+.btn-secondary {
+    background: #ffffff;
+    color: #000000;
+    border-color: #000000;
+}
+
+.btn-secondary:hover {
+    background: #000000;
+    color: #ffffff;
+}
+
+/* Features Section */
+.features {
+    padding: 60px 0;
+    background: #ffffff;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #000000;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #000000;
+    text-align: center;
+    transition: none;
+}
+
+.feature-card:hover {
+    background: #f0f0f0;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #000000;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+.feature-card p {
+    color: #000000;
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+/* Download Section */
+.download {
+    padding: 60px 0;
+    background: #f0f0f0;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+
+.download h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000000;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+.download > .container > p {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #000000;
+}
+
+.download-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.download-card {
+    background: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #000000;
+    text-align: center;
+}
+
+.download-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #000000;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+.download-card p {
+    margin-bottom: 1rem;
+    color: #000000;
+    font-size: 0.9rem;
+}
+
+.download-card ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.download-card li {
+    padding: 0.25rem 0;
+    color: #000000;
+    position: relative;
+    padding-left: 1rem;
+    font-size: 0.9rem;
+}
+
+.download-card li:before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: #000000;
+}
+
+/* About Section */
+.about {
+    padding: 60px 0;
+    background: #ffffff;
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #000000;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+.about p {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #000000;
+    margin-bottom: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 1px solid #000000;
+}
+
+footer p {
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero {
+        padding: 80px 20px 40px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-wrap: wrap;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .download-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .ascii-art {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .features h2,
+    .download h2,
+    .about h2 {
+        font-size: 1.6rem;
+    }
+    
+    .ascii-art {
+        font-size: 6px;
+    }
+}
+
+.retro-screenshot {
+    display: block;
+    margin: 24px auto 24px auto;
+    border: 2px solid #000000;
+    max-width: 90%;
+    background: #fff;
+    box-shadow: none;
+} 

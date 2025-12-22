@@ -1,26 +1,112 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
-    <title>Lovable App</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genetic Circuit Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <h1 class="logo">GeneSim</h1>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#download">Download</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-    <!-- TODO: Update og:title to match your application name -->
-    <meta property="og:title" content="Lovable App" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Genetic Circuit Simulator</h1>
+                <p>A powerful desktop application for modeling and simulating gene regulatory networks with an intuitive visual interface.</p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary">Download Now</a>
+                    <a href="#features" class="btn btn-secondary">Learn More</a>
+                </div>
+                <img src="screenshot.png" alt="Simulator Screenshot" class="retro-screenshot">
+            </div>
+            <div class="hero-image">
+                <div class="placeholder-image">
+                    <span>Simulator Screenshot</span>
+                </div>
+            </div>
+        </section>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>[Visual Network Editor]</h3>
+                        <p>Drag and drop interface for creating gene regulatory networks with genes, inducers, and reporters.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>[Real-time Simulation]</h3>
+                        <p>Live simulation with deterministic and stochastic modes for accurate biological modeling.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>[Advanced Analysis]</h3>
+                        <p>Sensitivity analysis, bifurcation diagrams, and nullcline analysis for deep insights.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>[Multicellular Support]</h3>
+                        <p>Model complex multicellular systems with cell boundaries and intercellular communication.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>[Customizable Parameters]</h3>
+                        <p>Fine-tune gene expression parameters including production rates, degradation, and leaky expression.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>[Interactive Plots]</h3>
+                        <p>Dynamic plotting with zoom, pan, and export capabilities for publication-ready figures.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+        <section id="download" class="download">
+            <div class="container">
+                <h2>Download</h2>
+                <p>Get started with the Genetic Circuit Simulator today.</p>
+                <div class="download-options">
+                    <div class="download-card">
+                        <h3>Source Code</h3>
+                        <p>Download the complete source code and run locally.</p>
+                        <a href="https://github.com/HarrisKClark/Genetic-Circuit-Simulation-Tool" class="btn btn-primary">View on GitHub</a>
+                    </div>
+                    <div class="download-card">
+                        <h3>Requirements</h3>
+                        <ul>
+                            <li>Python 3.8+</li>
+                            <li>tkinter (usually included)</li>
+                            <li>numpy, scipy, matplotlib</li>
+                            <li>pandas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About</h2>
+                <p>The Genetic Circuit Simulator is a desktop application designed for researchers, educators, and students working with gene regulatory networks. It provides an intuitive interface for modeling complex biological systems and understanding their dynamics.</p>
+                <p>Built with Python and Tkinter, the simulator offers both deterministic and stochastic simulation modes, making it suitable for a wide range of applications in synthetic biology and systems biology.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Genetic Circuit Simulator. Built for research and education.</p>
+        </div>
+    </footer>
+</body>
+</html> 
