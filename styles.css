@@ -1,46 +1,61 @@
-/* Reset */
+/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html, body {
+    background: #000000;
+    overscroll-behavior: contain;
+}
+
+/* NEW font: less typewritery than Courier */
 :root {
-    --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --alert-red: #cc0000;
+    --site-font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
-    font-family: var(--font-ui);
-    background: #ffffff;
+    font-family: var(--site-font);
+    line-height: 1.4;
     color: #000000;
+    background-color: #ffffff;
     font-size: 14px;
-    line-height: 1.45;
     text-align: center;
 }
 
-/* Nav */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
 header {
     background: #000000;
     color: #ffffff;
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #000000;
 }
 
 .nav-container {
     max-width: 800px;
     margin: 0 auto;
-    height: 60px;
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 60px;
 }
 
 .logo {
     font-size: 1.5rem;
-    font-weight: 800;
+    font-weight: bold;
+    color: #ffffff;
+    font-family: var(--site-font);
 }
 
 .nav-links {
@@ -52,103 +67,363 @@ header {
 .nav-links a {
     color: #ffffff;
     text-decoration: none;
+    font-weight: normal;
+    font-size: 1rem;
 }
 
-/* Hero */
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
 .hero {
-    padding: 90px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     min-height: 100vh;
+    padding: 80px 20px 40px;
+    background: #ffffff;
+    color: #000000;
+    border-bottom: 1px solid #000000;
 }
 
 .hero-content {
     max-width: 800px;
-    margin: 0 auto;
+    text-align: center;
 }
 
-/* 🔴 ANNOUNCEMENT — EVERYTHING RED, INCLUDING BRACKETS */
+/* ✅ Announcement: EVERYTHING red including brackets + link states */
 .announcement {
-    margin-bottom: 1.5rem;
+    margin: 0 auto 1.25rem auto;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #cc0000;
 }
 
-.announcement-text,
-.announcement-text * ,
-.announcement-text a,
-.announcement-text a:visited,
-.announcement-text a:hover,
-.announcement-text a:active {
-    color: var(--alert-red) !important;
-    font-size: 1.25rem;
-    font-weight: 700;
+/* Force all children + link states to stay red */
+.announcement,
+.announcement * ,
+.announcement a,
+.announcement a:visited,
+.announcement a:hover,
+.announcement a:active {
+    color: #cc0000 !important;
+}
+
+/* keep link underlined */
+.announcement a,
+.announcement a:visited {
     text-decoration: underline;
 }
 
-.announcement-text a:hover {
+.announcement a:hover {
     text-decoration: none;
 }
 
+.ascii-art {
+    margin-bottom: 2rem;
+    font-family: var(--site-font);
+    font-size: 12px;
+    line-height: 1.2;
+    white-space: pre;
+    overflow-x: auto;
+}
+
+.ascii-art pre {
+    margin: 0;
+    font-family: var(--site-font);
+}
+
 .hero h1 {
-    font-size: 2.6rem;
-    font-weight: 900;
-    margin-bottom: 1.25rem;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #000000;
+    font-family: var(--site-font);
 }
 
 .hero p {
-    max-width: 680px;
-    margin: 0 auto 2rem;
     font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #000000;
+    line-height: 1.4;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
 }
 
 /* Buttons */
 .btn {
-    padding: 10px 18px;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 0;
+    text-decoration: none;
+    font-weight: normal;
+    transition: none;
     border: 1px solid #000000;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-family: var(--site-font);
     background: #ffffff;
     color: #000000;
-    font-weight: 600;
-    text-decoration: none;
 }
 
 .btn-primary {
     background: #000000;
     color: #ffffff;
+    border-color: #000000;
 }
 
-/* Sections */
-.features,
-.download,
-.about {
+.btn-primary:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+.btn-secondary {
+    background: #ffffff;
+    color: #000000;
+    border-color: #000000;
+}
+
+.btn-secondary:hover {
+    background: #000000;
+    color: #ffffff;
+}
+
+/* Features Section */
+.features {
     padding: 60px 0;
+    background: #ffffff;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #000000;
+    font-weight: bold;
+    font-family: var(--site-font);
 }
 
 .features-grid {
     display: grid;
-    gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .feature-card {
-    border: 1px solid #000000;
+    background: #ffffff;
     padding: 1.5rem;
+    border: 1px solid #000000;
+    text-align: center;
+    transition: none;
+}
+
+.feature-card:hover {
+    background: #f0f0f0;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #000000;
+    font-weight: bold;
+    font-family: var(--site-font);
+}
+
+.feature-card p {
+    color: #000000;
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+/* Download Section */
+.download {
+    padding: 60px 0;
+    background: #f0f0f0;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+}
+
+.download h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000000;
+    font-weight: bold;
+    font-family: var(--site-font);
+}
+
+.download > .container > p {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #000000;
+}
+
+.download-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.download-card {
+    background: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #000000;
+    text-align: center;
+}
+
+.download-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #000000;
+    font-weight: bold;
+    font-family: var(--site-font);
+}
+
+.download-card p {
+    margin-bottom: 1rem;
+    color: #000000;
+    font-size: 0.9rem;
+}
+
+.download-card ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.download-card li {
+    padding: 0.25rem 0;
+    color: #000000;
+    position: relative;
+    padding-left: 1rem;
+    font-size: 0.9rem;
+}
+
+.download-card li:before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: #000000;
+}
+
+/* About Section */
+.about {
+    padding: 60px 0;
+    background: #ffffff;
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #000000;
+    font-weight: bold;
+    font-family: var(--site-font);
+}
+
+.about p {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #000000;
+    margin-bottom: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 /* Footer */
 footer {
     background: #000000;
     color: #ffffff;
+    text-align: center;
     padding: 1.5rem 0;
+    border-top: 1px solid #000000;
 }
 
-/* Responsive */
+footer p {
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
     }
 
-    .announcement-text {
-        font-size: 1.1rem;
+    .hero {
+        padding: 80px 20px 40px;
     }
 
     .hero h1 {
         font-size: 2rem;
     }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .download-options {
+        grid-template-columns: 1fr;
+    }
+
+    .ascii-art {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .features h2,
+    .download h2,
+    .about h2 {
+        font-size: 1.6rem;
+    }
+
+    .ascii-art {
+        font-size: 6px;
+    }
+}
+
+.retro-screenshot {
+    display: block;
+    margin: 24px auto 24px auto;
+    border: 2px solid #000000;
+    max-width: 90%;
+    background: #fff;
+    box-shadow: none;
 }
