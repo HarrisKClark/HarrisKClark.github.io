@@ -10,13 +10,8 @@ html, body {
     overscroll-behavior: contain;
 }
 
-/* Less "typewriter" font: clean system sans */
-:root {
-    --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-}
-
 body {
-    font-family: var(--font-ui);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.4;
     color: #000000;
     background-color: #ffffff;
@@ -53,9 +48,8 @@ header {
 
 .logo {
     font-size: 1.5rem;
-    font-weight: 800;
+    font-weight: bold;
     color: #ffffff;
-    letter-spacing: 0.2px;
 }
 
 .nav-links {
@@ -67,7 +61,7 @@ header {
 .nav-links a {
     color: #ffffff;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: normal;
     font-size: 1rem;
 }
 
@@ -92,42 +86,36 @@ header {
     text-align: center;
 }
 
-/* Announcement ABOVE title, bigger, and RED */
+/* NEW announcement styling */
 .announcement {
-    margin: 0 auto 1.25rem auto;
-    font-size: 1.15rem;
-    font-weight: 600;
     color: #cc0000;
-    max-width: 800px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
-.announcement a,
-.announcement a:visited,
-.announcement a:hover,
-.announcement a:active {
+.announcement a {
     color: #cc0000;
     text-decoration: underline;
 }
 
-.announcement a:hover {
-    text-decoration: none;
+.announcement a:visited {
+    color: #cc0000;
 }
 
 .hero h1 {
-    font-size: 2.6rem;
-    margin-bottom: 1.25rem;
-    font-weight: 900;
-    line-height: 1.15;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    line-height: 1.2;
     color: #000000;
-    letter-spacing: -0.4px;
 }
 
 .hero p {
     font-size: 1rem;
     margin-bottom: 2rem;
     color: #000000;
-    line-height: 1.5;
-    max-width: 680px;
+    line-height: 1.4;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -141,14 +129,14 @@ header {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 10px 18px;
+    padding: 8px 16px;
     border-radius: 0;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: normal;
     transition: none;
     border: 1px solid #000000;
     cursor: pointer;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     background: #ffffff;
     color: #000000;
 }
@@ -186,7 +174,7 @@ header {
     font-size: 2rem;
     margin-bottom: 2rem;
     color: #000000;
-    font-weight: 900;
+    font-weight: bold;
 }
 
 .features-grid {
@@ -212,13 +200,13 @@ header {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
     color: #000000;
-    font-weight: 800;
+    font-weight: bold;
 }
 
 .feature-card p {
     color: #000000;
-    line-height: 1.5;
-    font-size: 0.95rem;
+    line-height: 1.4;
+    font-size: 0.9rem;
 }
 
 /* Download Section */
@@ -234,7 +222,7 @@ header {
     font-size: 2rem;
     margin-bottom: 1rem;
     color: #000000;
-    font-weight: 900;
+    font-weight: bold;
 }
 
 .download > .container > p {
@@ -262,13 +250,13 @@ header {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     color: #000000;
-    font-weight: 900;
+    font-weight: bold;
 }
 
 .download-card p {
     margin-bottom: 1rem;
     color: #000000;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .download-card ul {
@@ -282,7 +270,7 @@ header {
     color: #000000;
     position: relative;
     padding-left: 1rem;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .download-card li:before {
@@ -303,15 +291,15 @@ header {
     font-size: 2rem;
     margin-bottom: 2rem;
     color: #000000;
-    font-weight: 900;
+    font-weight: bold;
 }
 
 .about p {
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.4;
     color: #000000;
     margin-bottom: 1rem;
-    max-width: 700px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -328,7 +316,7 @@ footer {
 
 footer p {
     color: #ffffff;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 /* Responsive Design */
@@ -337,16 +325,8 @@ footer p {
         display: none;
     }
 
-    .hero {
-        padding: 80px 20px 40px;
-    }
-
     .hero h1 {
         font-size: 2rem;
-    }
-
-    .announcement {
-        font-size: 1.05rem;
     }
 
     .hero-buttons {
@@ -362,28 +342,6 @@ footer p {
     }
 }
 
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero p,
-    .announcement {
-        font-size: 0.95rem;
-    }
-
-    .btn {
-        padding: 8px 14px;
-        font-size: 0.9rem;
-    }
-
-    .features h2,
-    .download h2,
-    .about h2 {
-        font-size: 1.6rem;
-    }
-}
-
 .retro-screenshot {
     display: block;
     margin: 24px auto 24px auto;
@@ -391,9 +349,4 @@ footer p {
     max-width: 90%;
     background: #fff;
     box-shadow: none;
-}
-
-/* Hide placeholder block if you have a real screenshot image */
-.placeholder-image {
-    display: none;
 }
