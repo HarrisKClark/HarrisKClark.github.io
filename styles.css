@@ -10,13 +10,13 @@ html, body {
     overscroll-behavior: contain;
 }
 
-/* NEW font: less typewritery than Courier */
+/* Less "typewriter" font: clean system sans */
 :root {
-    --site-font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
 body {
-    font-family: var(--site-font);
+    font-family: var(--font-ui);
     line-height: 1.4;
     color: #000000;
     background-color: #ffffff;
@@ -53,9 +53,9 @@ header {
 
 .logo {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 800;
     color: #ffffff;
-    font-family: var(--site-font);
+    letter-spacing: 0.2px;
 }
 
 .nav-links {
@@ -67,7 +67,7 @@ header {
 .nav-links a {
     color: #ffffff;
     text-decoration: none;
-    font-weight: normal;
+    font-weight: 500;
     font-size: 1rem;
 }
 
@@ -92,27 +92,20 @@ header {
     text-align: center;
 }
 
-/* ✅ Announcement: EVERYTHING red including brackets + link states */
+/* Announcement ABOVE title, bigger, and RED */
 .announcement {
     margin: 0 auto 1.25rem auto;
     font-size: 1.15rem;
-    font-weight: 700;
+    font-weight: 600;
     color: #cc0000;
+    max-width: 800px;
 }
 
-/* Force all children + link states to stay red */
-.announcement,
-.announcement * ,
 .announcement a,
 .announcement a:visited,
 .announcement a:hover,
 .announcement a:active {
-    color: #cc0000 !important;
-}
-
-/* keep link underlined */
-.announcement a,
-.announcement a:visited {
+    color: #cc0000;
     text-decoration: underline;
 }
 
@@ -120,35 +113,21 @@ header {
     text-decoration: none;
 }
 
-.ascii-art {
-    margin-bottom: 2rem;
-    font-family: var(--site-font);
-    font-size: 12px;
-    line-height: 1.2;
-    white-space: pre;
-    overflow-x: auto;
-}
-
-.ascii-art pre {
-    margin: 0;
-    font-family: var(--site-font);
-}
-
 .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: bold;
-    line-height: 1.2;
+    font-size: 2.6rem;
+    margin-bottom: 1.25rem;
+    font-weight: 900;
+    line-height: 1.15;
     color: #000000;
-    font-family: var(--site-font);
+    letter-spacing: -0.4px;
 }
 
 .hero p {
     font-size: 1rem;
     margin-bottom: 2rem;
     color: #000000;
-    line-height: 1.4;
-    max-width: 600px;
+    line-height: 1.5;
+    max-width: 680px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -162,15 +141,14 @@ header {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 8px 16px;
+    padding: 10px 18px;
     border-radius: 0;
     text-decoration: none;
-    font-weight: normal;
+    font-weight: 600;
     transition: none;
     border: 1px solid #000000;
     cursor: pointer;
-    font-size: 0.9rem;
-    font-family: var(--site-font);
+    font-size: 0.95rem;
     background: #ffffff;
     color: #000000;
 }
@@ -208,8 +186,7 @@ header {
     font-size: 2rem;
     margin-bottom: 2rem;
     color: #000000;
-    font-weight: bold;
-    font-family: var(--site-font);
+    font-weight: 900;
 }
 
 .features-grid {
@@ -231,23 +208,17 @@ header {
     background: #f0f0f0;
 }
 
-.feature-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
 .feature-card h3 {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
     color: #000000;
-    font-weight: bold;
-    font-family: var(--site-font);
+    font-weight: 800;
 }
 
 .feature-card p {
     color: #000000;
-    line-height: 1.4;
-    font-size: 0.9rem;
+    line-height: 1.5;
+    font-size: 0.95rem;
 }
 
 /* Download Section */
@@ -263,8 +234,7 @@ header {
     font-size: 2rem;
     margin-bottom: 1rem;
     color: #000000;
-    font-weight: bold;
-    font-family: var(--site-font);
+    font-weight: 900;
 }
 
 .download > .container > p {
@@ -292,14 +262,13 @@ header {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     color: #000000;
-    font-weight: bold;
-    font-family: var(--site-font);
+    font-weight: 900;
 }
 
 .download-card p {
     margin-bottom: 1rem;
     color: #000000;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .download-card ul {
@@ -313,7 +282,7 @@ header {
     color: #000000;
     position: relative;
     padding-left: 1rem;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .download-card li:before {
@@ -334,16 +303,15 @@ header {
     font-size: 2rem;
     margin-bottom: 2rem;
     color: #000000;
-    font-weight: bold;
-    font-family: var(--site-font);
+    font-weight: 900;
 }
 
 .about p {
     font-size: 1rem;
-    line-height: 1.4;
+    line-height: 1.5;
     color: #000000;
     margin-bottom: 1rem;
-    max-width: 600px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -360,7 +328,7 @@ footer {
 
 footer p {
     color: #ffffff;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 /* Responsive Design */
@@ -377,6 +345,10 @@ footer p {
         font-size: 2rem;
     }
 
+    .announcement {
+        font-size: 1.05rem;
+    }
+
     .hero-buttons {
         flex-wrap: wrap;
     }
@@ -388,10 +360,6 @@ footer p {
     .download-options {
         grid-template-columns: 1fr;
     }
-
-    .ascii-art {
-        font-size: 8px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -399,23 +367,20 @@ footer p {
         font-size: 1.8rem;
     }
 
-    .hero p {
-        font-size: 0.9rem;
+    .hero p,
+    .announcement {
+        font-size: 0.95rem;
     }
 
     .btn {
-        padding: 6px 12px;
-        font-size: 0.8rem;
+        padding: 8px 14px;
+        font-size: 0.9rem;
     }
 
     .features h2,
     .download h2,
     .about h2 {
         font-size: 1.6rem;
-    }
-
-    .ascii-art {
-        font-size: 6px;
     }
 }
 
@@ -426,4 +391,9 @@ footer p {
     max-width: 90%;
     background: #fff;
     box-shadow: none;
+}
+
+/* Hide placeholder block if you have a real screenshot image */
+.placeholder-image {
+    display: none;
 }
