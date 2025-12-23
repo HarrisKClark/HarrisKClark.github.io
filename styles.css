@@ -10,8 +10,13 @@ html, body {
     overscroll-behavior: contain;
 }
 
+/* A cleaner “technical UI” font stack: less typewriter than Courier */
+:root {
+    --font-ui-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
 body {
-    font-family: 'Courier New', monospace;
+    font-family: var(--font-ui-mono);
     line-height: 1.4;
     color: #000000;
     background-color: #ffffff;
@@ -48,9 +53,10 @@ header {
 
 .logo {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 700;
     color: #ffffff;
-    font-family: 'Courier New', monospace;
+    font-family: var(--font-ui-mono);
+    letter-spacing: 0.2px;
 }
 
 .nav-links {
@@ -62,7 +68,7 @@ header {
 .nav-links a {
     color: #ffffff;
     text-decoration: none;
-    font-weight: normal;
+    font-weight: 500;
     font-size: 1rem;
 }
 
@@ -87,27 +93,14 @@ header {
     text-align: center;
 }
 
-.ascii-art {
-    margin-bottom: 2rem;
-    font-family: 'Courier New', monospace;
-    font-size: 12px;
-    line-height: 1.2;
-    white-space: pre;
-    overflow-x: auto;
-}
-
-.ascii-art pre {
-    margin: 0;
-    font-family: 'Courier New', monospace;
-}
-
 .hero h1 {
     font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: bold;
+    margin-bottom: 0.75rem;
+    font-weight: 800;
     line-height: 1.2;
     color: #000000;
-    font-family: 'Courier New', monospace;
+    font-family: var(--font-ui-mono);
+    letter-spacing: -0.2px;
 }
 
 .hero p {
@@ -118,6 +111,24 @@ header {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Announcement line under hero header */
+.announcement {
+    margin: 0 auto 1.25rem auto;
+    font-size: 1rem;
+    color: #cc0000;
+    max-width: 600px;
+}
+
+.announcement a {
+    color: #cc0000;
+    text-decoration: underline;
+    margin-left: 0.35rem;
+}
+
+.announcement a:hover {
+    text-decoration: none;
 }
 
 .hero-buttons {
@@ -132,12 +143,12 @@ header {
     padding: 8px 16px;
     border-radius: 0;
     text-decoration: none;
-    font-weight: normal;
+    font-weight: 500;
     transition: none;
     border: 1px solid #000000;
     cursor: pointer;
-    font-size: 0.9rem;
-    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    font-family: var(--font-ui-mono);
     background: #ffffff;
     color: #000000;
 }
@@ -175,8 +186,8 @@ header {
     font-size: 2rem;
     margin-bottom: 2rem;
     color: #000000;
-    font-weight: bold;
-    font-family: 'Courier New', monospace;
+    font-weight: 800;
+    font-family: var(--font-ui-mono);
 }
 
 .features-grid {
@@ -198,23 +209,18 @@ header {
     background: #f0f0f0;
 }
 
-.feature-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
 .feature-card h3 {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
     color: #000000;
-    font-weight: bold;
-    font-family: 'Courier New', monospace;
+    font-weight: 750;
+    font-family: var(--font-ui-mono);
 }
 
 .feature-card p {
     color: #000000;
     line-height: 1.4;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 /* Download Section */
@@ -230,8 +236,8 @@ header {
     font-size: 2rem;
     margin-bottom: 1rem;
     color: #000000;
-    font-weight: bold;
-    font-family: 'Courier New', monospace;
+    font-weight: 800;
+    font-family: var(--font-ui-mono);
 }
 
 .download > .container > p {
@@ -259,14 +265,14 @@ header {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     color: #000000;
-    font-weight: bold;
-    font-family: 'Courier New', monospace;
+    font-weight: 800;
+    font-family: var(--font-ui-mono);
 }
 
 .download-card p {
     margin-bottom: 1rem;
     color: #000000;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .download-card ul {
@@ -280,7 +286,7 @@ header {
     color: #000000;
     position: relative;
     padding-left: 1rem;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .download-card li:before {
@@ -301,8 +307,8 @@ header {
     font-size: 2rem;
     margin-bottom: 2rem;
     color: #000000;
-    font-weight: bold;
-    font-family: 'Courier New', monospace;
+    font-weight: 800;
+    font-family: var(--font-ui-mono);
 }
 
 .about p {
@@ -327,7 +333,7 @@ footer {
 
 footer p {
     color: #ffffff;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 /* Responsive Design */
@@ -335,29 +341,25 @@ footer p {
     .nav-links {
         display: none;
     }
-    
+
     .hero {
         padding: 80px 20px 40px;
     }
-    
+
     .hero h1 {
         font-size: 2rem;
     }
-    
+
     .hero-buttons {
         flex-wrap: wrap;
     }
-    
+
     .features-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .download-options {
         grid-template-columns: 1fr;
-    }
-    
-    .ascii-art {
-        font-size: 8px;
     }
 }
 
@@ -365,24 +367,21 @@ footer p {
     .hero h1 {
         font-size: 1.8rem;
     }
-    
-    .hero p {
-        font-size: 0.9rem;
+
+    .hero p,
+    .announcement {
+        font-size: 0.95rem;
     }
-    
+
     .btn {
         padding: 6px 12px;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
-    
+
     .features h2,
     .download h2,
     .about h2 {
         font-size: 1.6rem;
-    }
-    
-    .ascii-art {
-        font-size: 6px;
     }
 }
 
@@ -393,4 +392,9 @@ footer p {
     max-width: 90%;
     background: #fff;
     box-shadow: none;
-} 
+}
+
+/* Placeholder block for when screenshot is absent */
+.placeholder-image {
+    display: none;
+}
