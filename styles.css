@@ -10,13 +10,13 @@ html, body {
     overscroll-behavior: contain;
 }
 
-/* A cleaner “technical UI” font stack: less typewriter than Courier */
+/* Less "typewriter" font: clean system sans */
 :root {
-    --font-ui-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
 body {
-    font-family: var(--font-ui-mono);
+    font-family: var(--font-ui);
     line-height: 1.4;
     color: #000000;
     background-color: #ffffff;
@@ -53,9 +53,8 @@ header {
 
 .logo {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 800;
     color: #ffffff;
-    font-family: var(--font-ui-mono);
     letter-spacing: 0.2px;
 }
 
@@ -93,42 +92,44 @@ header {
     text-align: center;
 }
 
+/* Announcement ABOVE title, bigger, and RED */
+.announcement {
+    margin: 0 auto 1.25rem auto;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #cc0000;
+    max-width: 800px;
+}
+
+.announcement a,
+.announcement a:visited,
+.announcement a:hover,
+.announcement a:active {
+    color: #cc0000;
+    text-decoration: underline;
+}
+
+.announcement a:hover {
+    text-decoration: none;
+}
+
 .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.75rem;
-    font-weight: 800;
-    line-height: 1.2;
+    font-size: 2.6rem;
+    margin-bottom: 1.25rem;
+    font-weight: 900;
+    line-height: 1.15;
     color: #000000;
-    font-family: var(--font-ui-mono);
-    letter-spacing: -0.2px;
+    letter-spacing: -0.4px;
 }
 
 .hero p {
     font-size: 1rem;
     margin-bottom: 2rem;
     color: #000000;
-    line-height: 1.4;
-    max-width: 600px;
+    line-height: 1.5;
+    max-width: 680px;
     margin-left: auto;
     margin-right: auto;
-}
-
-/* Announcement line under hero header */
-.announcement {
-    margin: 0 auto 1.25rem auto;
-    font-size: 1rem;
-    color: #cc0000;
-    max-width: 600px;
-}
-
-.announcement a {
-    color: #cc0000;
-    text-decoration: underline;
-    margin-left: 0.35rem;
-}
-
-.announcement a:hover {
-    text-decoration: none;
 }
 
 .hero-buttons {
@@ -140,15 +141,14 @@ header {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 8px 16px;
+    padding: 10px 18px;
     border-radius: 0;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     transition: none;
     border: 1px solid #000000;
     cursor: pointer;
     font-size: 0.95rem;
-    font-family: var(--font-ui-mono);
     background: #ffffff;
     color: #000000;
 }
@@ -186,8 +186,7 @@ header {
     font-size: 2rem;
     margin-bottom: 2rem;
     color: #000000;
-    font-weight: 800;
-    font-family: var(--font-ui-mono);
+    font-weight: 900;
 }
 
 .features-grid {
@@ -213,13 +212,12 @@ header {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
     color: #000000;
-    font-weight: 750;
-    font-family: var(--font-ui-mono);
+    font-weight: 800;
 }
 
 .feature-card p {
     color: #000000;
-    line-height: 1.4;
+    line-height: 1.5;
     font-size: 0.95rem;
 }
 
@@ -236,8 +234,7 @@ header {
     font-size: 2rem;
     margin-bottom: 1rem;
     color: #000000;
-    font-weight: 800;
-    font-family: var(--font-ui-mono);
+    font-weight: 900;
 }
 
 .download > .container > p {
@@ -265,8 +262,7 @@ header {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     color: #000000;
-    font-weight: 800;
-    font-family: var(--font-ui-mono);
+    font-weight: 900;
 }
 
 .download-card p {
@@ -307,16 +303,15 @@ header {
     font-size: 2rem;
     margin-bottom: 2rem;
     color: #000000;
-    font-weight: 800;
-    font-family: var(--font-ui-mono);
+    font-weight: 900;
 }
 
 .about p {
     font-size: 1rem;
-    line-height: 1.4;
+    line-height: 1.5;
     color: #000000;
     margin-bottom: 1rem;
-    max-width: 600px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -350,6 +345,10 @@ footer p {
         font-size: 2rem;
     }
 
+    .announcement {
+        font-size: 1.05rem;
+    }
+
     .hero-buttons {
         flex-wrap: wrap;
     }
@@ -374,7 +373,7 @@ footer p {
     }
 
     .btn {
-        padding: 6px 12px;
+        padding: 8px 14px;
         font-size: 0.9rem;
     }
 
@@ -394,7 +393,7 @@ footer p {
     box-shadow: none;
 }
 
-/* Placeholder block for when screenshot is absent */
+/* Hide placeholder block if you have a real screenshot image */
 .placeholder-image {
     display: none;
 }
