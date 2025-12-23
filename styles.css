@@ -1,61 +1,46 @@
-/* Reset and base styles */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body {
-    background: #000000;
-    overscroll-behavior: contain;
-}
-
-/* Less "typewriter" font: clean system sans */
 :root {
-    --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    --font-ui: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --alert-red: #cc0000;
 }
 
 body {
     font-family: var(--font-ui);
-    line-height: 1.4;
+    background: #ffffff;
     color: #000000;
-    background-color: #ffffff;
     font-size: 14px;
+    line-height: 1.45;
     text-align: center;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Navigation */
+/* Nav */
 header {
     background: #000000;
     color: #ffffff;
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000;
-    border-bottom: 2px solid #000000;
 }
 
 .nav-container {
     max-width: 800px;
     margin: 0 auto;
+    height: 60px;
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
-    color: #ffffff;
-    letter-spacing: 0.2px;
 }
 
 .nav-links {
@@ -67,333 +52,103 @@ header {
 .nav-links a {
     color: #ffffff;
     text-decoration: none;
-    font-weight: 500;
-    font-size: 1rem;
 }
 
-.nav-links a:hover {
-    text-decoration: underline;
-}
-
-/* Hero Section */
+/* Hero */
 .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 90px 20px 40px;
     min-height: 100vh;
-    padding: 80px 20px 40px;
-    background: #ffffff;
-    color: #000000;
-    border-bottom: 1px solid #000000;
 }
 
 .hero-content {
     max-width: 800px;
-    text-align: center;
+    margin: 0 auto;
 }
 
-/* Announcement ABOVE title, bigger, and RED */
+/* 🔴 ANNOUNCEMENT — EVERYTHING RED, INCLUDING BRACKETS */
 .announcement {
-    margin: 0 auto 1.25rem auto;
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: #cc0000;
-    max-width: 800px;
+    margin-bottom: 1.5rem;
 }
 
-.announcement a,
-.announcement a:visited,
-.announcement a:hover,
-.announcement a:active {
-    color: #cc0000;
+.announcement-text,
+.announcement-text * ,
+.announcement-text a,
+.announcement-text a:visited,
+.announcement-text a:hover,
+.announcement-text a:active {
+    color: var(--alert-red) !important;
+    font-size: 1.25rem;
+    font-weight: 700;
     text-decoration: underline;
 }
 
-.announcement a:hover {
+.announcement-text a:hover {
     text-decoration: none;
 }
 
 .hero h1 {
     font-size: 2.6rem;
-    margin-bottom: 1.25rem;
     font-weight: 900;
-    line-height: 1.15;
-    color: #000000;
-    letter-spacing: -0.4px;
+    margin-bottom: 1.25rem;
 }
 
 .hero p {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    color: #000000;
-    line-height: 1.5;
     max-width: 680px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
+    margin: 0 auto 2rem;
+    font-size: 1rem;
 }
 
 /* Buttons */
 .btn {
-    display: inline-block;
     padding: 10px 18px;
-    border-radius: 0;
-    text-decoration: none;
-    font-weight: 600;
-    transition: none;
     border: 1px solid #000000;
-    cursor: pointer;
-    font-size: 0.95rem;
     background: #ffffff;
     color: #000000;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .btn-primary {
     background: #000000;
     color: #ffffff;
-    border-color: #000000;
 }
 
-.btn-primary:hover {
-    background: #ffffff;
-    color: #000000;
-}
-
-.btn-secondary {
-    background: #ffffff;
-    color: #000000;
-    border-color: #000000;
-}
-
-.btn-secondary:hover {
-    background: #000000;
-    color: #ffffff;
-}
-
-/* Features Section */
-.features {
+/* Sections */
+.features,
+.download,
+.about {
     padding: 60px 0;
-    background: #ffffff;
-}
-
-.features h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #000000;
-    font-weight: 900;
 }
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .feature-card {
-    background: #ffffff;
-    padding: 1.5rem;
     border: 1px solid #000000;
-    text-align: center;
-    transition: none;
-}
-
-.feature-card:hover {
-    background: #f0f0f0;
-}
-
-.feature-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    color: #000000;
-    font-weight: 800;
-}
-
-.feature-card p {
-    color: #000000;
-    line-height: 1.5;
-    font-size: 0.95rem;
-}
-
-/* Download Section */
-.download {
-    padding: 60px 0;
-    background: #f0f0f0;
-    border-top: 1px solid #000000;
-    border-bottom: 1px solid #000000;
-}
-
-.download h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #000000;
-    font-weight: 900;
-}
-
-.download > .container > p {
-    text-align: center;
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    color: #000000;
-}
-
-.download-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.download-card {
-    background: #ffffff;
     padding: 1.5rem;
-    border: 1px solid #000000;
-    text-align: center;
-}
-
-.download-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: #000000;
-    font-weight: 900;
-}
-
-.download-card p {
-    margin-bottom: 1rem;
-    color: #000000;
-    font-size: 0.95rem;
-}
-
-.download-card ul {
-    list-style: none;
-    text-align: left;
-    margin-bottom: 1rem;
-}
-
-.download-card li {
-    padding: 0.25rem 0;
-    color: #000000;
-    position: relative;
-    padding-left: 1rem;
-    font-size: 0.95rem;
-}
-
-.download-card li:before {
-    content: ">";
-    position: absolute;
-    left: 0;
-    color: #000000;
-}
-
-/* About Section */
-.about {
-    padding: 60px 0;
-    background: #ffffff;
-}
-
-.about h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #000000;
-    font-weight: 900;
-}
-
-.about p {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #000000;
-    margin-bottom: 1rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
 }
 
 /* Footer */
 footer {
     background: #000000;
     color: #ffffff;
-    text-align: center;
     padding: 1.5rem 0;
-    border-top: 1px solid #000000;
 }
 
-footer p {
-    color: #ffffff;
-    font-size: 0.95rem;
-}
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
     }
 
-    .hero {
-        padding: 80px 20px 40px;
+    .announcement-text {
+        font-size: 1.1rem;
     }
 
     .hero h1 {
         font-size: 2rem;
     }
-
-    .announcement {
-        font-size: 1.05rem;
-    }
-
-    .hero-buttons {
-        flex-wrap: wrap;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .download-options {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero p,
-    .announcement {
-        font-size: 0.95rem;
-    }
-
-    .btn {
-        padding: 8px 14px;
-        font-size: 0.9rem;
-    }
-
-    .features h2,
-    .download h2,
-    .about h2 {
-        font-size: 1.6rem;
-    }
-}
-
-.retro-screenshot {
-    display: block;
-    margin: 24px auto 24px auto;
-    border: 2px solid #000000;
-    max-width: 90%;
-    background: #fff;
-    box-shadow: none;
-}
-
-/* Hide placeholder block if you have a real screenshot image */
-.placeholder-image {
-    display: none;
 }
